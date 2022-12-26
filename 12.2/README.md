@@ -4,9 +4,11 @@
 
 - Список пользователей:
 
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/1.png)
 
 - Список прав пользователя sys_temp:
 
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/2.png)
 
 - Восстановление БД sakila:
 
@@ -16,6 +18,10 @@ SOURCE /root/sakila-db/sakila-data.sql
 ``` 
 
 ER-диаграмма: 
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/3.png)
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/sakila.png)
+
 
 Запросы:
 
@@ -32,6 +38,8 @@ USE sakila;
 SHOW FULL TABLES;
 
 ```
+
+---
 
 ### Задание №2
 
@@ -51,8 +59,13 @@ WHERE t.constraint_type='PRIMARY KEY'
 
 ```
 
-Скриншот с ключами: 
+Скриншот: 
 
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/5.png)
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/6.png)
+
+---
 
 ### Задание №3
 
@@ -67,6 +80,8 @@ REVOKE INSERT, DELETE, UPDATE ON *.* FROM `sys_temp`@`%`;
 
 ```
 
-Скриншоты:
+Скриншот:
 
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.2/img/4.png)
 
+---
