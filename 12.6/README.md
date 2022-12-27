@@ -44,3 +44,21 @@ start slave;
 ![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.6/img/2022-12-27_13-07.png)
 
 ---
+
+### Задание №3
+
+Команды:
+
+```
+#slave:
+create user 'replication'@'%' IDENTIFIED with mysql_native_password by '7856';
+
+#master:
+change master to master_host='192.168.0.68', master_user='replication', master_password='7856', master_log_file='mybin.000001', master_log_pos = 1132;
+start slave;
+
+```
+
+Скриншот:
+
+![alt text](
