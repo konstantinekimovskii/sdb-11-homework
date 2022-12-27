@@ -61,4 +61,6 @@ start slave;
 
 Скриншот:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.6/img/2022-12-27_13-25.png)
+
+---
