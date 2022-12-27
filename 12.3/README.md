@@ -27,7 +27,7 @@ SELECT payment_date, rental_id, customer_id  FROM payment ORDER BY payment_date 
 
 ```
 
-SELECT REPLACE (LOWER(first_name), 'll', 'pp'), LOWER(last_name) FROM customer WHERE active = 1 AND first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
+SELECT REPLACE (LOWER(first_name), 'll', 'pp') AS first_name_rep_lower, LOWER(last_name) AS last_name_lower FROM customer WHERE active = 1 AND first_name LIKE 'Kelly' OR first_name LIKE 'Willie';
 
 ```
 
