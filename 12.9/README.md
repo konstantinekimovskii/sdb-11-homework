@@ -28,9 +28,9 @@ terraform {
 }
 
 provider "yandex" {
-  token     = "AQAAAAAjPbcgAATuwUjHsswia0qZrRi2GRMgfrk"
-  cloud_id  = "b1ga4hti71e0fa1dhmd6"
-  folder_id = "b1g57gu8hekir6a1u176"
+  token     = "###"
+  cloud_id  = "###"
+  folder_id = "###"
 }
 
 resource "yandex_mdb_postgresql_cluster" "test" {
