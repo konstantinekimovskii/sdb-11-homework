@@ -53,7 +53,7 @@ GROUP BY MONTH(p.payment_date)
 
 Результат:
 
-![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.4/img/3.png)
+![alt text](
 
 Запрос выводит информацию за какой месяц была получена наибольшая сумма платежей, и по количеству аренд за этот месяц.
 
