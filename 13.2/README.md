@@ -16,9 +16,9 @@ ecryptfs-unwrap-passphrase
 
 Скрины:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/2023-01-04_12-51.png)
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/2023-01-04_12-52.png)
 
 ---
 
