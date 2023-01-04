@@ -18,7 +18,7 @@ HAVING COUNT(cus.customer_id) > 300;
 
 Результат:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.4/img/1.png)
 
 Запрос выводит информацию о магазине, в котором обслуживается более 300 покупателей + фамилия и имя сотрудника из этого магазина, город нахождения магазина, количество пользователей, закреплённых в этом магазине.
 
@@ -35,7 +35,7 @@ WHERE f.`length` > (SELECT AVG(f.length) FROM film f);
 
 Результат:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.4/img/2.png)
 
 Запрос выводит количество фильмов, продолжительность которых больше средней продолжительности всех фильмов.
 
@@ -53,7 +53,7 @@ GROUP BY MONTH(p.payment_date)
 
 Результат:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.4/img/3.png)
 
 Запрос выводит информацию за какой месяц была получена наибольшая сумма платежей, и по количеству аренд за этот месяц.
 
@@ -76,7 +76,7 @@ GROUP BY r.staff_id
 
 Результат:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/12.4/img/4.png)
 
 Запрос выводит продавцов и их продажи + добавляет колонку "award" в которой указывается заслуживает ли он премии, при условии, что продаж больше 8000. 
 
