@@ -24,3 +24,20 @@ ecryptfs-unwrap-passphrase
 
 ### Задание 2.
 
+* Примонтировал к vm дополнительный VBOX HARDDISK на 100MB:
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/1.png)
+
+* Создал новый раздел на диске, чтобы впоследствии использовать его.
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/2.png)
+
+* Создал LUKS-раздел в новом разделе + открыл его:
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/3.png)
+
+* Указал ФС и точку монтирование LUKS-раздела:
+
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.2/img/4.png)
+
+---
