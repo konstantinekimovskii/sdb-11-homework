@@ -62,7 +62,7 @@
 
 Скриншот:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.3/img/1.png)
 
 ---
 
@@ -110,5 +110,6 @@ Status for the jail: sshd
 
 Скриншот работы hydra:
 
-![alt text](
+![alt text](https://github.com/konstantinekimovskii/sdb-11-homework/blob/main/13.3/img/2.png)
 
+---
