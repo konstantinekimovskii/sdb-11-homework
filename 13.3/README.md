@@ -1,8 +1,8 @@
-# Домашнее задание к занятию 13.3. «Защита сети» - Екимовский К.
+# Домашнее задание к занятию 13.3. «Защита сети» - Екимовский К
 
 ---
 
-### Задание 1.
+### Задание 1
 
 Команды:
 **nmap -sT 192.168.0.136** лог Suricata:
@@ -30,7 +30,7 @@
 
 **nmap -sS 192.168.0.136** лог Suricata:
 
-```
+```text
 01/05/2023-12:47:48.943184  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:49010 -> 192.168.0.136:3306
 01/05/2023-12:47:50.200641  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:49012 -> 192.168.0.136:3306
 01/05/2023-12:47:54.000377  [**] [1:2002911:6] ET SCAN Potential VNC Scan 5900-5920 [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:49010 -> 192.168.0.136:5906
@@ -58,7 +58,7 @@
 ```
 
 В логах Suricata данные сканирования через nmap отмечены как подозрительные [Classification: Potentially Bad Traffic].
-В логах fail2ban инфы нет, настроены правила только на службу ssh. 
+В логах fail2ban инфы нет, настроены правила только на службу ssh.
 
 Скриншот:
 
@@ -66,10 +66,11 @@
 
 ---
 
-### Задание 2.
+### Задание 2
 
 Выполнил попытку подбора паролей к службе ssh: **hydra -L users.txt -P pass.txt 192.168.0.136 ssh**
 В логах fail2ban:
+
 ```
 2023-01-05 13:03:22,439 fail2ban.filter         [2986]: INFO    [sshd] Found 192.168.0.148 - 2023-01-05 13:03:22
 2023-01-05 13:03:22,459 fail2ban.filter         [2986]: INFO    [sshd] Found 192.168.0.148 - 2023-01-05 13:03:22
@@ -87,12 +88,14 @@
 ```
 
 Лог Suricata:
+
 ```
 01/05/2023-13:03:20.650562  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:51850 -> 192.168.0.136:22
 01/05/2023-13:05:20.614054  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:47970 -> 192.168.0.136:22
 ```
 
 Так как служба fail2ban настроена для ssh, то адрес сканирующей машины был отправлен в блокировку:
+
 ```
 [root@localhost ~]# fail2ban-client status sshd
 Status for the jail: sshd
