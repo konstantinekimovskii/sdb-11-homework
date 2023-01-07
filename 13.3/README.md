@@ -2,12 +2,12 @@
 
 ---
 
-### Задание 1
+## Задание 1
 
 Команды:
 **nmap -sT 192.168.0.136** лог Suricata:
 
-```
+```text
 01/05/2023-12:33:24.032829  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:47922 -> 192.168.0.136:22
 01/05/2023-12:38:31.016285  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:39988 -> 192.168.0.136:3306
 01/05/2023-12:38:32.025876  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:39988 -> 192.168.0.136:3306
@@ -45,7 +45,7 @@
 
 **nmap -sV 192.168.0.136** лог Suricata:
 
-```
+```text
 01/05/2023-12:48:55.596817  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:55814 -> 192.168.0.136:3306
 01/05/2023-12:48:58.358863  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:55814 -> 192.168.0.136:5432
 01/05/2023-12:48:58.622627  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.0.148:55816 -> 192.168.0.136:5432
@@ -66,12 +66,12 @@
 
 ---
 
-### Задание 2
+## Задание 2
 
 Выполнил попытку подбора паролей к службе ssh: **hydra -L users.txt -P pass.txt 192.168.0.136 ssh**
 В логах fail2ban:
 
-```
+```text
 2023-01-05 13:03:22,439 fail2ban.filter         [2986]: INFO    [sshd] Found 192.168.0.148 - 2023-01-05 13:03:22
 2023-01-05 13:03:22,459 fail2ban.filter         [2986]: INFO    [sshd] Found 192.168.0.148 - 2023-01-05 13:03:22
 2023-01-05 13:03:22,460 fail2ban.filter         [2986]: INFO    [sshd] Found 192.168.0.148 - 2023-01-05 13:03:22
@@ -89,14 +89,14 @@
 
 Лог Suricata:
 
-```
+```text
 01/05/2023-13:03:20.650562  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:51850 -> 192.168.0.136:22
 01/05/2023-13:05:20.614054  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.0.148:47970 -> 192.168.0.136:22
 ```
 
 Так как служба fail2ban настроена для ssh, то адрес сканирующей машины был отправлен в блокировку:
 
-```
+```bash
 [root@localhost ~]# fail2ban-client status sshd
 Status for the jail: sshd
 |- Filter
