@@ -18,7 +18,7 @@
 
 Код terraform:
 
-```json
+```javascript
 terraform {
   required_providers {
     yandex = {
