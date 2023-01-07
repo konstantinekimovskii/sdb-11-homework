@@ -1,12 +1,12 @@
-# Домашнее задание к занятию 13.1. «Уязвимости и атаки на информационные системы» - Екимовский К.
+# Домашнее задание к занятию 13.1. «Уязвимости и атаки на информационные системы» - Екимовский К
 
 ---
 
-### Задание 1.
+## Задание 1
 
 Сетевые службы:
 
-```
+```bash
 PORT     STATE SERVICE     VERSION
 21/tcp   open  ftp         vsftpd 2.3.4
 22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
@@ -39,25 +39,23 @@ PORT     STATE SERVICE     VERSION
 # Running: Linux 2.6.X
 # OS CPE: cpe:/o:linux:linux_kernel:2.6
 # OS details: Linux 2.6.9 - 2.6.33
-
 ```
 
 Уязвимости:
 
 * 21/tcp open ftp vsftpd 2.3.4:
-  1. https://www.exploit-db.com/exploits/49757
-  2. https://www.exploit-db.com/exploits/17491
-* 22/tcp open ssh OpenSSH 4.7p1 Debian 8ubuntu1 - https://amolblog.com/port-22-tcp-open-ssh-openssh-4-7p1-debian-8ubuntu1-protocol-2-0-exploit/
+  1. <https://www.exploit-db.com/exploits/49757>
+  2. <https://www.exploit-db.com/exploits/17491>
+* 22/tcp open ssh OpenSSH 4.7p1 Debian 8ubuntu1 - <https://amolblog.com/port-22-tcp-open-ssh-openssh-4-7p1-debian-8ubuntu1-protocol-2-0-exploit/>
 * 3306/tcp open mysql MySQL 5.0.51a-3ubuntu5:
-  1. https://www.exploit-db.com/exploits/23077
-  2. https://amolblog.com/3306-tcp-open-mysql-mysql-5-0-51a-3ubuntu5-exploit/
+  1. <https://www.exploit-db.com/exploits/23077>
+  2. <https://amolblog.com/3306-tcp-open-mysql-mysql-5-0-51a-3ubuntu5-exploit/>
 
 ---
 
-
 Если подходить к вопросу уязвимостей более серьезно, то:
 
-```
+```bash
 nmap -A --script vulners.nse 192.168.0.73
 
 22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
@@ -252,10 +250,12 @@ nmap -A --script vulners.nse 192.168.0.73
 
 ---
 
-### Задание 2.
+## Задание 2
 
 * SYN - соединение не устанавливается до конца. На исследуемый порт посылается сообщение SYN, затем идет ожидание ответа, на основании которого определяется статус порта. Ответы SYN/ACK говорят, что порт прослушивается (открыт), а ответ RST говорит, что не прослушивается.
 
 * FIN + Xmas - производится отправка пакетов с отключенными флагами в заголовке TCP. При FIN-сканировании устанавливается бит TCP FIN, а в Xmas-сканировании устанавливаются флаги FIN, PSH и URG. Методы основаны на особенности спецификации RFC 793, согласно которой при закрытом порте входящий сегмент, не содержащий RST, повлечет за собой отправку RST в ответ. Когда порт открыт, ответа не будет. Ошибка достижимости ICMP означает, что порт фильтруется.
 
 * UDP - для определения статуса порта посылается пустой UDP-заголовок, и если в ответ приходит ошибка достижимости ICMP Destination Unreachable с кодом Destination port unreachable, это значит, что порт закрыт; другие ошибки достижимости ICMP (Destination host unreachable, Destination protocol unreachable, Network administratively prohibited, Host administratively prohibited, Communication administratively prohibited) означают, что порт фильтруется. Если порт отвечает UDP-пакетом, предполагается, что он открыт.
+
+---

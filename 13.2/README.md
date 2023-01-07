@@ -1,12 +1,12 @@
-# Домашнее задание к занятию 13.2. «Защита хоста» - Екимовский К.
+# Домашнее задание к занятию 13.2. «Защита хоста» - Екимовский К
 
 ---
 
-### Задание 1.
+## Задание 1
 
 Команды:
 
-```
+```bash
 apt install ecryptfs-utils
 adduser cryptouser
 sudo ecryptfs-migrate-home -u cryptouser
@@ -22,7 +22,7 @@ ecryptfs-unwrap-passphrase
 
 ---
 
-### Задание 2.
+## Задание 2
 
 * Примонтировал к vm дополнительный VBOX HARDDISK на 100MB:
 
